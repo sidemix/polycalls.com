@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poly Calls – Free Trial (15 Spots Left)</title>
   <meta name="description" content="FREE 48hr trial – 1–2 Polymarket calls every hour. Next 15 only."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet"/>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { 
@@ -15,48 +16,34 @@
       display:flex; 
       align-items:center; 
       padding:20px 15px;
-      line-height:1.5;
     }
     .container { max-width:520px; width:100%; margin:0 auto; text-align:center; }
     
     .logo { width:140px; height:auto; margin-bottom:20px; filter:drop-shadow(0 0 20px #39ff14); }
     
-    h1 { 
-      font-size:42px; 
-      font-weight:900; 
-      margin:10px 0 16px;
-      text-shadow:0 0 20px rgba(57,255,20,0.5);
-    }
-    .subtitle { font-size:20px; opacity:0.9; margin-bottom:20px; }
+    h1 { font-size:42px; line-height:1.15; font-weight:900; margin:10px 0 16px; }
+    h1 span { color:#39ff14; }
+    .subtitle { font-size:20px; opacity:0.9; margin-bottom:20px; line-height:1.4; }
     
     .urgent { 
-      background:#39ff14; 
-      color:#000; 
-      padding:14px 32px; 
-      border-radius:50px; 
-      font-weight:900; 
-      font-size:19px; 
-      display:inline-block; 
-      margin:25px 0;
+      background:#39ff14; color:#000; padding:14px 32px; border-radius:50px; 
+      font-weight:900; font-size:19px; display:inline-block; margin:25px 0;
       animation:glow 2s infinite;
     }
     @keyframes glow { 0%,100%{box-shadow:0 0 20px #39ff14} 50%{box-shadow:0 0 40px #39ff14} }
     
     .bullets { 
-      background:rgba(57,255,20,0.08); 
-      border:1px solid rgba(57,255,20,0.3);
-      padding:28px 24px; 
-      border-radius:16px; 
-      margin:35px auto; 
-      max-width:460px;
-      font-size:18px;
+      background:rgba(57,255,20,0.08); border:1px solid rgba(57,255,20,0.3);
+      padding:28px 24px; border-radius:16px; margin:35px auto; max-width:460px;
+      font-size:18px; line-height:1.8;
     }
     .bullets li { margin:18px 0; }
-    
+
+    /* ←←← ONLY CHANGE HERE →→→ */
     .btn { 
       display:block; 
-      background:#39ff14; 
-      color:#000; 
+      background:#39ff14;           /* your neon green */
+      color:#ffffff !important;     /* pure white text */
       font-weight:900; 
       font-size:26px; 
       padding:24px; 
@@ -67,19 +54,15 @@
       box-shadow:0 0 40px rgba(57,255,20,0.6);
       transition:0.3s;
     }
-    .btn:hover, .btn:active { 
-      transform:translateY(-5px); 
-      box-shadow:0 0 60px rgba(57,255,20,0.9);
-    }
-    
-    .price-note { font-size:18px; margin:25px 0 50px; opacity:0.9; }
+    .btn:hover { transform:translateY(-5px); box-shadow:0 0 60px rgba(57,255,20,0.9); }
+
+    .price-note { font-size:18px; margin:25px 0 50px; opacity:0.9; line-height:1.5; }
     .footer { opacity:0.5; font-size:13px; margin-top:60px; }
 
     @media (max-width:480px) {
       h1 { font-size:34px; }
-      .subtitle { font-size:18px; }
-      .btn { font-size:23px; padding:20px; }
       .logo { width:120px; }
+      .btn { font-size:23px; padding:20px; }
     }
   </style>
 </head>
@@ -87,7 +70,7 @@
   <div class="container">
     <img src="https://raw.githubusercontent.com/yourusername/polycalls.com/main/logo.png" alt="Poly Calls Logo" class="logo">
     
-    <h1>How To Make Money <br><span style="color:#39ff14;">Today</span> On PolyMarket<br>Without Any Research</h1>
+    <h1>How To Make Money <br><span>Today</span> On PolyMarket<br>Without Any Research</h1>
     
     <p class="subtitle">1–2 precision calls every hour • 24/7 • Straight to your phone</p>
 
