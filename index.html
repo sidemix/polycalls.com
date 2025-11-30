@@ -1,102 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyCalls: Crush Polymarket BTC Trades with AI Signals – No Charts, No Stress</title>
-    <meta name="description" content="Get hourly BUY UP/DOWN signals for Polymarket BTC markets. Algorithmic edge, zero emotion. Join now and profit in 60 seconds.">
-    <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f4; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        header { text-align: center; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 60px 20px; }
-        h1 { font-size: 2.5em; margin: 0; }
-        h2 { color: #1e3c72; border-bottom: 2px solid #2a5298; padding-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { background: #e8f4fd; margin: 10px 0; padding: 15px; border-radius: 8px; border-left: 4px solid #2a5298; }
-        .cta { display: inline-block; background: #ff6b35; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; transition: background 0.3s; }
-        .cta:hover { background: #e55a2b; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .testimonial { background: #d4edda; padding: 20px; border-radius: 8px; font-style: italic; margin: 20px 0; }
-        img { max-width: 100%; height: auto; border-radius: 8px; }
-        footer { text-align: center; padding: 20px; background: #1e3c72; color: white; }
-        @media (max-width: 600px) { h1 { font-size: 2em; } .container { padding: 10px; } }
-    </style>
+  <meta charset="UTF-8" />
+  <title>PolyCalls – BTC Hourly Signals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050608;
+      --card: #0c0f13;
+      --text: #f5f5f5;
+      --muted: #a0a4ad;
+      --accent: #00ff90;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141821 0, #050608 55%, #000 100%);
+      color: var(--text);
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .wrap {
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px 18px 22px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .logo {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    h1 {
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .subhead {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 1.3;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .bullet-dot {
+      margin-top: 4px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #02110a;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 16px rgba(0, 255, 144, 0.55);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 22px rgba(0, 255, 144, 0.75);
+      background: #3dffac;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 0 10px rgba(0, 255, 144, 0.5);
+    }
+
+    .cta-note {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .disclaimer {
+      margin-top: 10px;
+      font-size: 10px;
+      text-align: center;
+      color: #70747f;
+    }
+
+    @media (max-width: 360px) {
+      .card {
+        padding: 16px 14px 18px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>PolyCalls</h1>
-            <p><strong>Crush Polymarket's BTC Hourly Markets in 60 Seconds – No Charts, No Gambling, Just Wins</strong></p>
-            <p>A private Telegram bot delivers crystal-clear BUY UP / BUY DOWN signals 24/7. Powered by battle-tested algorithms. Tired of FOMO trades? End it now.</p>
-            <a href="https://t.me/PolyCallsVIP?utm_source=improved-site" class="cta" target="_blank">Join Now – First Signal Hits in the Next Hour</a>
-        </header>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        PolyCalls • BTC Hourly
+      </div>
 
-        <section id="what-you-get">
-            <h2>What You Get: Edge Without the Effort</h2>
-            <div class="features">
-                <ul>
-                    <li><strong>Hourly Live Alerts</strong><br>BUY UP or DOWN – pinged instantly when the edge confirms. No fluff, just action.</li>
-                    <li><strong>Precision 15-Min Entry Window</strong><br>Strike at peak probability. Minimize risk, maximize gains.</li>
-                    <li><strong>24/7 Auto-Tracking</strong><br>Monitors Polymarket prices in real-time. You're always synced.</li>
-                </ul>
-                <ul>
-                    <li><strong>Daily/Weekly Win Reports</strong><br>Transparent stats: Wins, losses, net profit. No smoke and mirrors.</li>
-                    <li><strong>Noise-Free Channel</strong><br>Read-only Telegram. Pure signals, zero distractions.</li>
-                    <li><strong>Risk-Built-In Filters</strong><br>Skips choppy hours. Protects your stack like a pro.</li>
-                </ul>
-            </div>
-            <img src="https://via.placeholder.com/600x300?text=Sample+Alert+Screenshot+(BUY+UP+Signal)" alt="Example PolyCalls alert showing BUY UP signal with timing and price" style="margin: 20px 0;">
-        </section>
+      <h1>BTC hourly signals, in your pocket.</h1>
 
-        <section id="why-it-works">
-            <h2>Why This Crushes Manual Trading</h2>
-            <p>Built from a refined TradingView Pine Script that's printed real profits. Now coded in Python for emotionless execution:</p>
-            <ul>
-                <li><strong>Proven 1-Hour Trends + Volatility Checks</strong> – Only trades clear directions with controlled risk.</li>
-                <li><strong>Stat-Backed Edges Only</strong> – No forced signals. Patience = profits.</li>
-                <li><strong>Human-Proof Logic</strong> – Bot ignores greed and fear. You just follow.</li>
-                <li><strong>Auditable Transparency</strong> – Every trade logged in SQLite. See the data yourself.</li>
-            </ul>
-            <img src="https://via.placeholder.com/600x300?text=Weekly+Performance+Chart+(+15%+Net+Profit)" alt="Sample weekly performance summary chart showing wins, losses, and net gains" style="margin: 20px 0;">
-        </section>
+      <p class="subhead">
+        Get clean BUY UP / BUY DOWN alerts for Polymarket’s 1-hour BTC markets — based on 1H trend and 15-minute entry edge.
+      </p>
 
-        <section id="proof">
-            <h2>Real Results Speak Louder Than Hype</h2>
-            <div class="testimonial">"Switched to PolyCalls last month – turned my sporadic wins into consistent +12% weekly. Finally, trading on autopilot." – Alex T., Crypto Trader</div>
-            <div class="testimonial">"The risk filters saved me during that BTC dump. Clear signals, no BS. Worth every penny." – Sarah K., Polymarket Enthusiast</div>
-            <!-- Add real testimonials or a performance table here -->
-            <p><em>Limited to 100 spots for accuracy. Join before they're gone.</em></p>
-        </section>
+      <ul>
+        <li>
+          <span class="bullet-dot"></span>
+          <span>Signals focus on the first 15 minutes of each hour — where the edge is strongest.</span>
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          <span>Algorithmic 1H trend, ATR, and ref-price logic — no guessing or FOMO entries.</span>
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          <span>Read-only Telegram channel: just signals and outcomes, zero chatter or spam.</span>
+        </li>
+      </ul>
 
-        <section id="about">
-            <h2>Behind the Bot: My Story</h2>
-            <p>I built PolyCalls after years of grinding BTC hourly trades on Polymarket. Manual strategies worked – until emotions crept in. Now, this Python beast runs my edge 24/7. No experience needed; just copy the signal and trade. (Not financial advice – DYOR and manage risk.)</p>
-        </section>
+      <div class="cta-wrap">
+        <a class="btn" href="https://t.me/PolyCallsVIP" target="_blank" rel="noopener">
+          Join The PolyCalls Telegram Channel
+        </a>
+        <div class="cta-note">
+          Get your next BTC hourly signal as soon as the bot spots a high-edge setup.
+        </div>
+      </div>
 
-        <section id="faq">
-            <h2>Got Questions? We've Got Answers</h2>
-            <details>
-                <summary>What are the signals?</summary>
-                <p>Simple BUY UP/DOWN for BTC hourly markets. Delivered via Telegram – act in seconds.</p>
-            </details>
-            <details>
-                <summary>How often? Will I get spammed?</summary>
-                <p>Up to hourly, but only on confirmed edges. Quiet channel, no noise.</p>
-            </details>
-            <details>
-                <summary>Beginner-friendly?</summary>
-                <p>100%. Algorithm does the heavy lifting – you just execute.</p>
-            </details>
-            <details>
-                <summary>How do I start?</summary>
-                <p>Hit the button below. Instant access, next signal soon.</p>
-            </details>
-        </section>
-
-        <footer>
-            <a href="https://t.me/PolyCallsVIP?utm_source=improved-site" class="cta" target="_blank" style="background: #2a5298;">Start Winning: Join PolyCalls Today</a>
-            <p>&copy; 2025 PolyCalls. Trade smart. Questions? DM @yourtelegram.</p>
-        </footer>
+      <div class="disclaimer">
+        For educational purposes only. Not financial advice. Trade at your own risk.
+      </div>
     </div>
+  </div>
 </body>
 </html>
